@@ -15,19 +15,19 @@ This project is a Java-based API testing framework using [REST Assured](https://
 
 ## Getting Started
 
-These instructions will help you set up and run the project on your local machine.
+This highly scalable, reusable API automation framework with Rest Assured and Java.
 
 ### Prerequisites
 
 - Java JDK 8 or higher
-- Maven (or Gradle if preferred)
+- Maven 
 - An IDE (e.g., IntelliJ IDEA, Eclipse)
 
 ### Installation
 
 1. Clone the repository:
    ```bash
-   git clone <repository_url>
+   git clone <https://github.com/Nagapraveen-Automationtesting/RestAssuredFrameWork.git>
    ```
 2. Navigate into the project directory:
    ```bash
@@ -42,17 +42,40 @@ These instructions will help you set up and run the project on your local machin
 
 ```
 .
-├── src
-│   ├── main
-│   │   └── java                # Contains main application code (if any)
-│   └── test
-│       ├── java                # Contains all test cases
-│       │   ├── config          # Configuration classes and helpers
-│       │   ├── models          # POJOs for request/response payloads
-│       │   ├── tests           # Test classes organized by API endpoint
-│       │   └── utils           # Utility functions
-│       └── resources           # Test resources and configuration files
-├── pom.xml                     # Maven configuration file with dependencies
+Folder PATH listing for volume New Volume
+Volume serial number is 14DC-CECB
+D:.
+|
++---src
+|   +---main
+|   |   +---java
+|   |   |   \---com
+|   |   |       \---api
+|   |   |           +---base
+|   |   |           |       APIConfig.java
+|   |   |           |       Config.java
+|   |   |           |       
+|   |   |           +---reports
+|   |   |           +---testdata
+|   |   |           |       Constants.java
+|   |   |           |       
+|   |   |           \---utils
+|   |   |                   APIutils.java
+|   |   |                   HttpStatus.java
+|   |   |                   JSONutils.java
+|   |   |                   
+|   |   \---resources
+|   |       |   config.properties
+|   |       |   
+|   |       +---payloads
+|   |       \---schemas
+|   \---test
+|       \---java
+|           \---com
+|               \---api
+|                   \---testcases
+|                           TestCases.java
+|                           
 └── README.md
 ```
 
@@ -69,56 +92,18 @@ You can also run specific test classes or methods by specifying their names:
 mvn -Dtest=<TestClassName> test
 ```
 
-#### Running Tests with Allure Reporting (if configured)
-If you are using Allure for reporting:
-1. Run tests to generate results:
-   ```bash
-   mvn test
-   ```
-2. Generate Allure reports:
-   ```bash
-   allure serve
-   ```
-
 ### Writing Tests
 
 1. Create a new test class under `src/test/java/tests/`.
 2. Use REST Assured to define API requests and assertions. For example:
 
-   ```java
-   import static io.restassured.RestAssured.*;
-   import static org.hamcrest.Matchers.*;
-
-   import org.junit.jupiter.api.Test;
-
-   public class ExampleTest {
-
-       @Test
-       public void testGetEndpoint() {
-           given()
-               .baseUri("https://jsonplaceholder.typicode.com")
-               .when()
-               .get("/posts/1")
-               .then()
-               .statusCode(200)
-               .body("userId", equalTo(1));
-       }
-   }
-   ```
-
-### Reporting
-
-This project can integrate with Allure or other reporting frameworks. If configured, Allure reports will be generated after each test run and can be viewed by running:
-```bash
-allure serve
-```
 
 ### Built With
 
 - [REST Assured](https://rest-assured.io/) - Java DSL for API testing
 - [JUnit](https://junit.org/) - Testing framework
 - [Maven](https://maven.apache.org/) - Dependency management
-- [Allure](https://docs.qameta.io/allure/) - Reporting framework (optional)
+
 
 ## Contributing
 
